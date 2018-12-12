@@ -1,0 +1,24 @@
+{
+  "name": "falconjs.io - BoilerpLate",
+  "version": "1.0.0",
+  "description": "Your Description Here",
+  "main": "./src/index.html",
+  "scripts": {
+    "start": "parcel ./src/index.html --port=8000 --open",
+    "build": "parcel ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "key, words"
+  ],
+  "author": "Your Name here",
+  "license": "MIT",
+  "dependencies": {
+    "@falconjs.io/falcon": "^0.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-react-jsx": "^6.24.1"
+  }
+}
