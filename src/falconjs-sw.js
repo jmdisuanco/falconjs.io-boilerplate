@@ -1,27 +1,42 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js')
-
+workbox.setConfig({ debug: false });
+const cacheName = 'FalonJS-App';
 const precacheCacheName = workbox.core.cacheNames.precache
 const runtimeCacheName = workbox.core.cacheNames.runtime
 
 let pwa = () => {
 
-  const staticAssets = [
-    './index.html'
-  ]
+  // const staticAssets = [
+  //   '/',
+  //   './index.html'
+  // ]
   
-  self.addEventListener('install', async event => {
-      const cache = await caches.open(cacheName);
-      await cache.addAll(staticAssets)
-    })
+  
 
   workbox.core.setCacheNameDetails({
     prefix: 'falconjs',
     suffix: 'v1'
   })
+
+  // self.addEventListener('install', async event => {
+  //   const cache = await caches.open(cacheName);
+  //   await cache.addAll(staticAssets)
+  // })
+
+  workbox.routing.registerRoute(
+    new RegExp('/'),
+    workbox.strategies.cacheFirst()
+  )
+  
+  workbox.routing.registerRoute(
+    new RegExp('.*\.html'),
+    workbox.strategies.cacheFirst()
+  )
   workbox.routing.registerRoute(
     new RegExp('.*\.js'),
-    workbox.strategies.networkFirst()
+    workbox.strategies.cacheFirst()
   )
+
 
 
   workbox.routing.registerRoute(

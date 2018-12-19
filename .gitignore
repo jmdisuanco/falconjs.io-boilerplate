@@ -6,3 +6,4 @@ dist
 package-lock.jsonnpm start
 node_modules
 devcert/*.*
+public

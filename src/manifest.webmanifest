@@ -1,7 +1,7 @@
 {
     "name" : "FalconJS BoilerPlate",
     "short_name": "FalconJS",
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#fff",
     "theme_color": "#992AAA",
