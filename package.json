@@ -4,7 +4,7 @@
   "description": "Your Description Here",
   "main": "./src/index.html",
   "scripts": {
-    "start": "parcel --public-url ./src/ index.html --https --port=8000 --open",
+    "start": "parcel ./src/index.html --https --port=8000 ./public --open",
     "start:customCert": "parcel ./src/index.html  --cert ./devcert/localhost.crt --key ./devcert/localhost.key --https --port=8000 --open --no-cache --out-dir ./public",
     "build": "parcel ./src/index.html",
     "cert:create": "openssl req -config openssl.cnf -nodes -new -x509  -keyout  ./devcert/localhost.key -out ./devcert/localhost.crt ",
