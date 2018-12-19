@@ -1,0 +1,16 @@
+{
+    "name" : "FalconJS BoilerPlate",
+    "short_name": "FalconJS",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#992AAA",
+    "description": "A FalconJS BoilerPlate",
+    "icons":[
+        {
+            "src": "images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

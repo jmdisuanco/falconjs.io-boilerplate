@@ -3,3 +3,6 @@ package.lock
 yarn.lock
 yarn.error
 dist
+package-lock.jsonnpm start
+node_modules
+devcert/*.*

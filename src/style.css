@@ -1,0 +1,22 @@
+/*
+Style for Divs
+*/
+.flcn-col div{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    font-size: 1em;
+    color: rgb(46, 38, 66);
+}
+
+
+.flcn-col div{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    font-size: 1em;
+    color: rgb(46, 38, 66);
+    border:1px solid #d3d3d3
+}

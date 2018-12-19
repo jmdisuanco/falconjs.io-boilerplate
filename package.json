@@ -1,12 +1,14 @@
 {
-  "name": "falconjs.io - BoilerpLate",
+  "name": "falconjs-boilerplate",
   "version": "1.0.0",
   "description": "Your Description Here",
   "main": "./src/index.html",
   "scripts": {
-    "start": "parcel ./src/index.html --port=8000 --open",
+    "start": "parcel --public-url ./src/ index.html --https --port=8000 --open",
+    "start:customCert": "parcel ./src/index.html  --cert ./devcert/localhost.crt --key ./devcert/localhost.key --https --port=8000 --open --no-cache --out-dir ./public",
     "build": "parcel ./src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cert:create": "openssl req -config openssl.cnf -nodes -new -x509  -keyout  ./devcert/localhost.key -out ./devcert/localhost.crt ",
+    "test": "createkeys.sh"
   },
   "keywords": [
     "key, words"
@@ -14,11 +16,17 @@
   "author": "Your Name here",
   "license": "MIT",
   "dependencies": {
-    "@falconjs.io/falcon": "^0.5.2"
+    "@babel/runtime": "^7.2.0",
+    "@falconjs.io/falcon": "^0.6.0",
+    "falconjs-component-flexgrid": "^1.0.1",
+    "sw.js": "0.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.0",
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-react-jsx": "^6.24.1"
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "node-sass": "^4.11.0"
   }
 }

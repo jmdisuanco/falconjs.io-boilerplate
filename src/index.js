@@ -1,5 +1,6 @@
 import {h, Render, Observable} from '@falconjs.io/falcon'
-
+import {Row, Col} from 'falconjs-component-flexgrid'
+import 'falconjs-component-flexgrid/dist/index.css'
 let StateStore = {
   data: {
       fName: 'FalconJS',
@@ -19,6 +20,26 @@ let StateStore = {
 }
 
 let App = new Observable(StateStore)
+
+/*
+Service Worker
+*/
+
+let registerSW = async () => {
+  if ('serviceWorker' in navigator) { // (2)
+    try {
+      console.log('add')
+      await navigator.serviceWorker.register('./falconjs-sw.js'); // (3)
+    } catch (e) {
+      console.log('ServiceWorker registration failed. Sorry about that.'); // (4)
+    }
+  }
+}
+
+window.addEventListener('load', (e) =>{
+  registerSW()
+})
+
 
 let Display = () => {
 return(
@@ -45,6 +66,12 @@ return(
   <div>
    <Display/>
    <Controller/>
+   <Row gutter={40} >
+   <Col xs={12}><div><img src={require("./images/logo.png")} height="150"/></div></Col>
+   <Col xs={12} md={3} lg={4}><div>1</div></Col>
+   <Col xs={12} md={3} lg={4}><div>2</div></Col>
+   <Col xs={12} md={6} lg={4}><div>3</div></Col>
+ </Row>
   </div>
 )
 } 
@@ -55,3 +82,6 @@ render(App)
 App.observe('fName', () =>{render(App)} )
 App.observe('lName', () =>{render(App)} )
 App.observe('age', () =>{render(App)} )
+
+
+

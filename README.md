@@ -1,4 +1,4 @@
-# FalconJS.io - Boilerpate
+# <img src="https://github.com/falcon-js/falconjs-logos/raw/master/png/FALCONJS-LOGO-992FFF.png" width="35">  FalconJS.io - Boilerpate
 
 A boiler plate for FalconJS Web Development Framework
 
