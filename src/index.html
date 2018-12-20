@@ -7,10 +7,16 @@
         <title>FalconJS Boilerplate</title>
         <link rel="manifest" href="./manifest.webmanifest">
         <link rel="stylesheet" type="text/css" href="./style.css">
+        <noscript>
+                <p>😱 Oh my! you don't have Javascript enabled. Please enabled to experience the FalconJS' coolness! 😎</p>
+        </noscript>
+        <script>
+        console.log(loc.indexOf(window.location.href+'')==0)
+        if (loc.indexOf(window.location.href+'')==0){ window.location.href = loc.replace('http://','https://')} //force redirect to https
+        </script>
     </head>
     <body>
         <div id="root"></div>
-      
-    </body>
-     <script src="./index.js" type="text/javascript"></script>
+        <script src="./index.js" type="text/javascript"></script>
+      </body>
 </html>
