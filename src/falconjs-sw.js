@@ -6,22 +6,10 @@ const runtimeCacheName = workbox.core.cacheNames.runtime
 
 let pwa = () => {
 
-  // const staticAssets = [
-  //   '/',
-  //   './index.html'
-  // ]
-  
-  
-
   workbox.core.setCacheNameDetails({
     prefix: 'falconjs',
     suffix: 'v1'
   })
-
-  // self.addEventListener('install', async event => {
-  //   const cache = await caches.open(cacheName);
-  //   await cache.addAll(staticAssets)
-  // })
 
   workbox.routing.registerRoute(
     new RegExp('/'),
@@ -36,7 +24,6 @@ let pwa = () => {
     new RegExp('.*\.js'),
     workbox.strategies.cacheFirst()
   )
-
 
 
   workbox.routing.registerRoute(
@@ -66,16 +53,6 @@ let pwa = () => {
       ],
     })
   )
-
-  // workbox.routing.registerRoute(
-  //   new RegExp('https://falconjs.io'),
-  //   workbox.strategies.NetworkFirst({
-  //     fetchOptions: {
-  //       credentials: 'include',
-  //     },
-  //   })
-  // )
-
 
 }
 
